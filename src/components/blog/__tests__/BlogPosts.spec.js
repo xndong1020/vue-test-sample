@@ -12,7 +12,7 @@ localVue.use(Vuex)
 jest.mock('@/api', () => ({
   getBlogPosts: jest.fn(() => {
     return new Promise(resolve => {
-      process.nextTick(() => {
+      global.process.nextTick(() => {
         resolve({ data: [{ title: 'title 1' }, { title: 'title 2' }] })
       })
     })
